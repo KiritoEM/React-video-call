@@ -91,7 +91,6 @@ const ThreeDScene = () => {
     return () => {
       renderer.domElement.remove();
       renderer.dispose();
-      // scene.dispose();
     };
   }, []);
 
