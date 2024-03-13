@@ -1,14 +1,101 @@
-import { useEffect, useRef } from "react";
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable prefer-const */
+import { useEffect } from "react";
 import * as THREE from "three";
 
-const ThreeScene = (): JSX.Element => {
-  const sceneRef = useRef<HTMLDivElement>(null);
-
+const ThreeDScene = () => {
   useEffect(() => {
-    console.log(sceneRef.current?.clientWidth);
+    let scene;
+    let camera;
+    let renderer;
+    let starGeometry;
+    let stars;
+
+    // Création de la scène
+    scene = new THREE.Scene();
+
+    // Création de la caméra
+    camera = new THREE.PerspectiveCamera(
+      60,
+      window.innerWidth / window.innerHeight,
+      1,
+      1000
+    );
+
+    //positions de la camera
+    camera.position.z = 10;
+    camera.position.x = Math.PI / 2;
+
+    // Création du rendu
+    renderer = new THREE.WebGLRenderer();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+
+    const container = document.getElementById("landing");
+    renderer.domElement.style.width = "100%";
+    renderer.domElement.style.height = "100vh";
+    container?.appendChild(renderer.domElement);
+
+    // Création de la géométrie des étoiles
+    starGeometry = new THREE.BufferGeometry();
+    const positions = [];
+    for (let i = 0; i < 6000; i++) {
+      positions.push(
+        Math.random() * 600 - 300,
+        Math.random() * 600 - 300,
+        Math.random() * 600 - 300
+      );
+    }
+    starGeometry.setAttribute(
+      "position",
+      new THREE.Float32BufferAttribute(positions, 3)
+    );
+
+    // Chargement de la texture de l'étoile
+    const sprite = new THREE.TextureLoader().load("/star.png");
+    const starMaterial = new THREE.PointsMaterial({
+      color: 0xaaaaaa,
+      size: 0.8,
+      map: sprite,
+    });
+
+    // Création de l'objet étoile
+    stars = new THREE.Points(starGeometry, starMaterial);
+    scene.add(stars);
+
+    // Animation de la scène
+    const animate = () => {
+      const positionsAttribute = starGeometry.getAttribute("position");
+      for (let i = 0; i < positionsAttribute.count; i++) {
+        const x = positionsAttribute.getX(i);
+        const y = positionsAttribute.getY(i);
+        const z = positionsAttribute.getZ(i);
+        if (y < -200) {
+          positionsAttribute.setZ(i, 200);
+        } else {
+          positionsAttribute.setY(i, y - 0.02);
+        }
+      }
+      positionsAttribute.needsUpdate = true;
+
+      stars.rotation.y += 0.002;
+      stars.rotation.x = -1.5;
+
+      renderer.render(scene, camera);
+      requestAnimationFrame(animate);
+    };
+
+    animate();
+
+    // Nettoyage des ressources
+    return () => {
+      renderer.domElement.remove();
+      renderer.dispose();
+      // scene.dispose();
+    };
   }, []);
 
-  return <div ref={sceneRef} />;
+  return null;
 };
 
-export default ThreeScene;
+export default ThreeDScene;
