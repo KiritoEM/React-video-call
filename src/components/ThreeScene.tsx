@@ -11,7 +11,7 @@ const ThreeDScene = () => {
     let renderer;
     let starGeometry;
     let stars;
-    const container = document.getElementById("landing");
+    const container = document.querySelector(".space-warp");
 
     // Création de la scène
     scene = new THREE.Scene();
@@ -43,9 +43,9 @@ const ThreeDScene = () => {
     const positions = [];
     for (let i = 0; i < 7000; i++) {
       positions.push(
-        Math.random() * 600 - 300,
-        Math.random() * 600 - 300,
-        Math.random() * 600 - 300
+        Math.random() * 650 - 300,
+        Math.random() * 650 - 300,
+        Math.random() * 650 - 300
       );
     }
     starGeometry.setAttribute(

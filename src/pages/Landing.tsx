@@ -1,11 +1,13 @@
+import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import ThreeScene from "../components/ThreeScene";
 
 const Landing = (): JSX.Element => {
+  const navigate = useNavigate();
   return (
     <section
       id="landing"
-      className="bg-stone-950 w-full h-screen overflow-hidden"
+      className="bg-stone-950 w-full h-screen overflow-hidden space-warp"
     >
       <ThreeScene />
       <Navbar />
@@ -27,7 +29,10 @@ const Landing = (): JSX.Element => {
           </p>
         </div>
         <div className="button flex flex-row justify-center">
-          <button className="text-white flex items-center gap-1.5 border-2 border-green-400 rounded-xl px-4 py-2 hover:bg-green-400 bg-stone-900">
+          <button
+            className="text-white flex items-center gap-1.5 border-2 border-green-400 rounded-xl px-4 py-2 hover:bg-green-400 bg-stone-900"
+            onClick={() => navigate("/join-room")}
+          >
             Rejoindre un room{" "}
             <img src="/chevron-right.png" alt="" style={{ width: "14px" }} />
           </button>
