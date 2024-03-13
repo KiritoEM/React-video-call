@@ -30,7 +30,7 @@ const Landing = (): JSX.Element => {
         </div>
         <div className="button flex flex-row justify-center">
           <button
-            className="text-white flex items-center gap-1.5 border-2 border-green-400 rounded-xl px-4 py-2 hover:bg-green-400 bg-stone-900"
+            className="text-white flex items-center gap-1.5 border-2 border-green-400 rounded-xl px-4 py-2 hover:bg-green-400 bg-stone-900 text-sm"
             onClick={() => navigate("/join-room")}
           >
             Rejoindre un room{" "}
