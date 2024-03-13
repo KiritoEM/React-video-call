@@ -14,7 +14,7 @@ const JoinRoom = () => {
         className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50  px-2 md:px-4 h-auto overflow-hidden w-full md:w-1/2 flex flex-col gap-5 md:gap-7"
       >
         <div className="title">
-          <h1 className="text-white font-semibold text-xl text-center md:text-2xl">
+          <h1 className="text-white font-semibold text-xl text-center md:text-xl">
             Entrez un nom de <span className="text-green-400">room</span>
           </h1>
         </div>
