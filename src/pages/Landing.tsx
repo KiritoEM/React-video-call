@@ -24,8 +24,7 @@ const Landing = (): JSX.Element => {
         <div className="text">
           <p className="text-white text-center">
             {" "}
-            Profitez de conversations vidéo fluides et de qualité avec notre
-            application de communication vidéo.
+            Application de vidéo-conférence basé sur ZegoCloud
           </p>
         </div>
         <div className="button flex flex-row justify-center">

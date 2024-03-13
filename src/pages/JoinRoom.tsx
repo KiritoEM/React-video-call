@@ -14,15 +14,14 @@ const JoinRoom = () => {
         className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50  px-2 md:px-4 h-auto overflow-hidden w-full md:w-1/2 flex flex-col gap-5 md:gap-7"
       >
         <div className="title">
-          <h1 className="text-white font-semibold text-xl text-center md:text-xl">
+          <h1 className="text-white font-semibold text-xl text-center md:text-2xl">
             Entrez un nom de <span className="text-green-400">room</span>
           </h1>
         </div>
         <div className="text">
           <p className="text-white text-center">
             {" "}
-            Entrez le même nom de room que vos proches pour commencer un appel
-            vidéo
+            Entrez le nom d' un room pour commencer un appel vidéo
           </p>
         </div>
         <div className="input-btn flex gap-3 justify-center w-full">
@@ -30,7 +29,7 @@ const JoinRoom = () => {
           <div className="input flex justify-center">
             <input
               type="text"
-              className="rounded-xl h-10 bg-stone-700 p-4 text-sm"
+              className="rounded-xl h-11 bg-stone-700 p-4 text-sm"
               placeholder="Nom de room"
             />
           </div>
