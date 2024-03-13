@@ -11,6 +11,7 @@ const ThreeDScene = () => {
     let renderer;
     let starGeometry;
     let stars;
+    const container = document.getElementById("landing");
 
     // Création de la scène
     scene = new THREE.Scene();
@@ -30,10 +31,11 @@ const ThreeDScene = () => {
     // Création du rendu
     renderer = new THREE.WebGLRenderer();
     renderer.setSize(window.innerWidth, window.innerHeight);
-
-    const container = document.getElementById("landing");
     renderer.domElement.style.width = "100%";
     renderer.domElement.style.height = "100vh";
+    renderer.domElement.style.position = "absolute";
+    renderer.domElement.style.zIndex = "5";
+    renderer.domElement.style.top = "0";
     container?.appendChild(renderer.domElement);
 
     // Création de la géométrie des étoiles
