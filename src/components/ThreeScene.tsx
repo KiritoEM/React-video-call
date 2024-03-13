@@ -5,7 +5,7 @@ const ThreeScene = (): JSX.Element => {
   const sceneRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    console.log(sceneRef.current);
+    console.log(sceneRef.current?.clientWidth);
   }, []);
 
   return <div ref={sceneRef} />;
