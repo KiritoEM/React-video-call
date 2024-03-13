@@ -41,7 +41,7 @@ const ThreeDScene = () => {
     // Création de la géométrie des étoiles
     starGeometry = new THREE.BufferGeometry();
     const positions = [];
-    for (let i = 0; i < 6000; i++) {
+    for (let i = 0; i < 7000; i++) {
       positions.push(
         Math.random() * 600 - 300,
         Math.random() * 600 - 300,

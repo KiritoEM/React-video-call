@@ -9,7 +9,7 @@ const Navbar = () => {
         <h4 className="text-white font-bold text-lg">videoCall</h4>
       </div>
       <div className="icon">
-        <img src="/menu.png" alt="" style={{ width: "25px" }} />
+        <img src="/menu.png" alt="" style={{ width: "23px" }} />
       </div>
     </nav>
   );
