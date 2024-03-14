@@ -13,7 +13,7 @@ const JoinRoom = (): JSX.Element => {
 
   const handleJoinRoom = () => {
     navigate(`/room/${roomName}`);
-    window.location.reload()
+    window.location.reload();
   };
 
   return (
