@@ -48,7 +48,6 @@ const Room = (): JSX.Element => {
       className="space-warp bg-stone-950 overflow-hidden w-full h-screen"
     >
       <ThreeDScene />
-      {/* <Navbar /> */}
       <section id="room__container" className="w-full flex items-center">
         <div ref={liveRoomRef} className="relative z-50 w-full h-screen"></div>
       </section>
