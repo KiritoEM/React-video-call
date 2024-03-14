@@ -69,9 +69,7 @@ const ThreeDScene = () => {
     const animate = () => {
       const positionsAttribute = starGeometry.getAttribute("position");
       for (let i = 0; i < positionsAttribute.count; i++) {
-        const x = positionsAttribute.getX(i);
         const y = positionsAttribute.getY(i);
-        const z = positionsAttribute.getZ(i);
         if (y < -200) {
           positionsAttribute.setZ(i, 200);
         } else {
