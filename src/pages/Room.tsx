@@ -17,7 +17,7 @@ const Room = (): JSX.Element => {
 
   const liveRoom = async (element: HTMLDivElement | null) => {
     if (element) {
-      const appID = import.meta.env.VITE_APP_ID;
+      const appID = parseInt(import.meta.env.VITE_APP_ID);
       const serverSecret = import.meta.env.VITE_SERVER_SECRET;
       const kitToken = ZegoUIKitPrebuilt.generateKitTokenForTest(
         appID,
