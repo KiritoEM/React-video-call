@@ -8,14 +8,6 @@ const Room = (): JSX.Element => {
   const { roomName } = useParams();
   const liveRoomRef = useRef<HTMLDivElement>(null);
 
-  const logTitle = () => {
-    if (liveRoomRef.current) {
-      console.log("Live room title:", liveRoomRef.current);
-      const innerDivs = liveRoomRef.current.querySelectorAll("div");
-      console.log(innerDivs);
-    }
-  };
-
   const liveRoom = async (element: HTMLDivElement | null) => {
     if (element) {
       const appID = parseInt(import.meta.env.VITE_APP_ID);
@@ -40,7 +32,6 @@ const Room = (): JSX.Element => {
 
   useEffect(() => {
     liveRoom(liveRoomRef.current);
-    logTitle();
   }, []);
 
   return (
